@@ -1,0 +1,13 @@
+server:
+  port: 9004
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9102/eureka/
+
+zuul:
+  routes:
+    microservice-produits:
+      path: /microservice-produits/**
+      serviceId: microservice-produits
+      stripPrefix: true
